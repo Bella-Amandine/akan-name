@@ -1,0 +1,7 @@
+body {
+    box-sizing: border-box;
+    background-image: url("../images/akan.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: left top;
+}
