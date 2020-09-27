@@ -12,7 +12,6 @@ document.getElementById("submitBtn").addEventListener('click', function(){
     var dob = getDob(); 
     var day = calculateDate(dob);
     displayAkanName(day, gender);
-    alert(day);
 })
 
 function calculateDate(dob) {
@@ -22,12 +21,12 @@ function calculateDate(dob) {
     var dd = parseInt(dob.substring(8,10));
 
     var dayOfTheWeek = (((cc/4)-2*cc-1) + (5*yy/4) + (26*(mm+1)/10) + dd ) % 7;
+   
     return dayOfTheWeek;
 }
 
 function displayAkanName(day, gender){
     if(day === 0 && gender === "female"){
        alert("Your Akan Name is : Akosua")
-       // document.getElementById("akan-name").innerHTML = "Your akan name is : Akosua"
     }
 }
