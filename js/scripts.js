@@ -26,41 +26,60 @@ function calculateDate(dob) {
 }
 
 function displayAkanName(day, gender){
-   if(gender === "male"){
-       if(day === 0){
-           alert("Your Akan name is : Kwasi");
-       }else if (day === 1) {
-           alert("Your Akan name is : Kwadwo");
-       }else if (day === 2) {
-           alert("Your Akan name is : Kwabena");
-       }else if(day === 3){
-           alert("Your Akan name is : Kwaku");
-       }else if (day === 4){
-           alert("Your Akan name is : Yaw");
-       }else if(day === 5){
-           alert("Your Akan name is : Kofi");
-       }else if(day === 6){
-           alert("Your Akan name is : Kwame");
-       }else {
-           alert("Invalid Day");
-       }
-   }else {
-       if(day === 0){
-           alert("Your Akan name is : Akosua");
-       }else if (day === 1) {
-           alert("Your Akan name is : Adwoa");
-       }else if (day === 2) {
-           alert("Your Akan name is : Abenaa");
-       }else if(day === 3){
-           alert("Your Akan name is : Akua");
-       }else if (day === 4){
-           alert("Your Akan name is : Yaa");
-       }else if(day === 5){
-           alert("Your Akan name is : Afua");
-       }else if(day === 6){
-           alert("Your Akan name is : Ama");
-       }else {
-           alert("Invalid Day");
-       }
-   }
+
+    if(validateData()){
+        if(gender === "male"){
+            if(day === 0){
+                alert("Your Akan name is : Kwasi");
+            }else if (day === 1) {
+                alert("Your Akan name is : Kwadwo");
+            }else if (day === 2) {
+                alert("Your Akan name is : Kwabena");
+            }else if(day === 3){
+                alert("Your Akan name is : Kwaku");
+            }else if (day === 4){
+                alert("Your Akan name is : Yaw");
+            }else if(day === 5){
+                alert("Your Akan name is : Kofi");
+            }else if(day === 6){
+                alert("Your Akan name is : Kwame");
+            }else {
+                alert("Invalid Day");
+            }
+        }else {
+            if(day === 0){
+                alert("Your Akan name is : Akosua");
+            }else if (day === 1) {
+                alert("Your Akan name is : Adwoa");
+            }else if (day === 2) {
+                alert("Your Akan name is : Abenaa");
+            }else if(day === 3){
+                alert("Your Akan name is : Akua");
+            }else if (day === 4){
+                alert("Your Akan name is : Yaa");
+            }else if(day === 5){
+                alert("Your Akan name is : Afua");
+            }else if(day === 6){
+                alert("Your Akan name is : Ama");
+            }else {
+                alert("Invalid Day");
+            }
+        }
+    } else {
+        alert("Invalid Date");
+    }
+
+   
+}
+
+function validateData(){
+    var dob = getDob();
+    var m = parseInt(dob.substring(5,7));
+    var d = parseInt(dob.substring(8,10));
+
+    if((d >= 1 || d <=31) && (m > 0 || m <= 12)){
+       return true;
+    }else {
+        return false;
+    }
 }
